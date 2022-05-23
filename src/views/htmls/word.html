@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+<style type="text/css">
+#tCanvas{
+  border:black 1px solid;
+}
+</style>
+<script type="text/javascript">
+function pageLoaded(){
+  //获取canvas对象的引用,注意tCanvas名字必须和下面body里面的id相同
+  var canvas=document.getElementById('tCanvas');
+  //获取该canvas的2D绘图环境
+  var context = canvas.getContext('2d');
+  //绘制代码将出现在这里
+  //绘制文本
+  context.fillText('antzone is good',100,40);
+  //修改字体
+  context.fillStyle = 'red';
+  context.font='20px Arial';
+  context.fillText('I love antzone',100,100);
+  //绘制空心的文本
+  context.strokeStyle = 'green';
+  context.font='36px 隶书';
+  
+  context.strokeText('大大伟大伟大',100,200);
+}
+window.onload=function(){
+  pageLoaded()
+}
+</script>
+</head>
+<body>
+	<input type="week">
+<canvas width = "500" height = "300" id = "tCanvas">浏览器不支持</canvas>
+</body>
+</html>

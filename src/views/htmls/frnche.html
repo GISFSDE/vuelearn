@@ -1,0 +1,54 @@
+<body>
+    <canvas id = "palette" width="800px" height="800px">
+        您的浏览器不支持Canvas标签，请升级或更换浏览器
+    </canvas>
+</body>
+</html>
+<script>
+    var myCanvas = document.getElementById("palette");
+    var palette = document.querySelector("#palette").getContext("2d");
+		palette.translate(300,300);
+		//绘制图形
+		function drawWindmill(){
+			palette.rotate((360/5)*Math.PI/180);
+			var linear=palette.createLinearGradient(2,50,200,0);
+			linear.addColorStop(0,"yellow");
+			linear.addColorStop(0.3,"#878");
+			linear.addColorStop(0.8,"yellow");
+			linear.addColorStop(1,"red");			
+			palette.beginPath();
+			palette.arc(120,120,160,180*Math.PI/180,360*Math.PI/180);
+			palette.arc(0,0,80,0,180*Math.PI)
+			palette.closePath();
+			palette.fillStyle=linear;
+			palette.fill();
+		}
+		setInterval(animates(),100);
+		function animates(){
+		//擦除画布
+		palette.clearRect(0,0,myCanvas.width,myCanvas.hight);
+		//重绘
+		drawWindmill();
+		//旋转角度
+		palette.rotate((1*Math.PI/180));
+		}
+		function drawWindmill() {
+		for(var i=0;i<5;i++){
+			
+			palette.rotate((360/5)*Math.PI/180);
+			var linear=palette.createLinearGradient(2,50,200,0);
+			linear.addColorStop(0,"yellow");
+			linear.addColorStop(0.3,"#878");
+			linear.addColorStop(0.8,"yellow");
+			linear.addColorStop(1,"red");			
+			palette.beginPath();
+			palette.arc(120,120,160,180*Math.PI/180,360*Math.PI/180);
+			palette.arc(0,0,80,0,180*Math.PI)
+			palette.closePath();
+			palette.fillStyle=linear;
+			palette.fill();
+			
+	}
+}
+
+</script>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script src="js/jquery-3.4.0.min.js"></script>
+	</head>
+	<body>
+		<section style="margin: 10px 10px">
+			<input type="button" value="打开或创建数据" onclick="openDB()" />
+			<input type="button" value="新增" onclick="addData()" />
+			<input type="button" value="查询" onclick="getData()" />
+			<input type="button" value="删除" onclick="removeData()" />
+			<input type="button" value="修改" onclick="modifyData()" />
+		</section>
+		<section>
+			<input id="txt_name" type="text" placeholder="请输入姓名" style="margin: 10px 10px" /><br />
+			<section style="margin: 10px 10px">
+				<label>男<input id="rdo_male" name="radio_sex" type="radio" value="1"></label>
+				<label>女<input id="rdo_female" name="radio_sex" type="radio" value="2"></label><br />
+			</section>
+			<input id="txt_age" type="number" placeholder="请输入年龄" style="margin: 10px 10px" /><br />
+			<input id="txt_salary" type="number" placeholder="请输入您的薪资" style="margin: 10px 10px" />
+		</section>
+		<div id="div_result"></div>
+
+		<script>
+			function openDB() {
+				//获取indexedDb对象 
+				var indexedDb = window.indexedDB;
+				//获取数据库连接对象
+				var request = indexedDB.open("cxk", 1);
+				//三个回调方法
+				request.onsuccess = function(event) {
+					//获取数据库操作对象
+					db = event.target.result;
+					console.log("打开或创建数据库成功！");
+				}
+				request.onerror = function(err) {
+					console.log("打开或创建数据库失败！");
+				}
+				request.onupgradeneeded = function(event) {
+					db = event.target.result;
+					var objestStore = db.createObjectStore("person", {
+						keyPath: 'id',
+						autoIncrement: true
+					});
+					var studentOs = tx.objectStore('person');
+					var optionalParameters = {
+						unique: false
+					};
+					var snoIdx = studentOs.createIndex('snoIdx', 'name', optionalParameters);
+					var sexIdx = studentOs.createIndex('sexIdx', 'sex', optionalParameters);
+					var ageIdx = studentOs.createIndex('ageIdx', 'age', optionalParameters);
+					var salaryIdx = studentOs.createIndex('salaryIdx', 'salary', optionalParameters);
+
+				}
+			}
+			//创建事务对象
+			function addData() {
+				openDB();
+				setTimeout(function() {
+
+					var tx = db.transaction("person", "readwrite"); //readonly,readwrite,versionchange
+					//得到对象仓库
+					var store = tx.objectStore('person');
+					//
+					var data = {
+						"name": $("#txt_name").val(),
+						"sex": $("input[name='radio_sex']:checked").val(),
+						"age": $("#txt_age").val(),
+						"salary": $("#txt_salary").val()
+					}
+					store.add(data);
+					db.close();
+
+				}, 500)
+
+			}
+
+			//创建事务对象
+			function getData(){
+        		var tx = db.transaction('person',"readwrite");//获取查询事务
+				var store = tx.objectStore('person');//查询并获得表
+				var index = store.index("sidIndex");//获得索引
+				index.get(103).onsuccess = function(e){//通过索引回调获得“102”的信息对象
+					if(this.result==undefined){
+						alert("查询失败")
+					}else{
+						alert(this.result.sid+ " " + this.result.sno + " " + this.result.sname+ " " + this.result.sage);
+					}
+					
+				}
+        	}
+
+
+			//创建事务对象
+			function removeData() {
+				openDB();
+				setTimeout(function() {
+
+					var tx = db.transaction("person", "readwrite"); //readonly,readwrite,versionchange
+					//得到对象仓库
+					var store = tx.objectStore('person');
+					//
+					var data = {
+						"name": $("#txt_name").val(),
+						"sex": $("input[name='radio_sex']:checked").val(),
+						"age": $("#txt_age").val(),
+						"salary": $("#txt_salary").val()
+					}
+					store.delete(data);
+					db.close();
+
+				}, 500)
+
+			}
+
+			//创建事务对象
+			function modifyData() {
+				openDB();
+				setTimeout(function() {
+
+					var tx = db.transaction("person", "readwrite"); //readonly,readwrite,versionchange
+					//得到对象仓库
+					var store = tx.objectStore('person');
+					//
+					var data = {
+						"name": $("#txt_name").val(),
+						"sex": $("input[name='radio_sex']:checked").val(),
+						"age": $("#txt_age").val(),
+						"salary": $("#txt_salary").val()
+					}
+					store.put(data);
+					db.close();
+
+				}, 500)
+
+			}
+		</script>
+	</body>
+</html>

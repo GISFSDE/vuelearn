@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<div style="text-align:center;">
+			<button onclick="playPause(myVideo)">播放/暂停</button>
+			<button onclick="makeBig()">大</button>
+			<button onclick="makeNormal()">中</button>
+			<button onclick="makeSmall()">小</button>
+			<br />
+			<audio src="img/莉莉安.mp3" controls="controls">
+				Your browser does not support the audio tag.
+			</audio>
+			<video id="video1" src="img/movie.ogg" controls="controls" loop="loop" <!-- preload="auto" -->>
+				<!-- <source src="img/baobao.3gp" type="video/3gpp"> -->
+			</video>
+			</video>
+
+			<script type="text/javascript">
+				var myVideo = document.getElementById("video1");
+
+				function playPause() {
+					if (myVideo.paused)
+						myVideo.play();
+					else
+						myVideo.pause();
+				}
+
+				function makeBig() {
+					myVideo.width = "500";
+				}
+
+				function makeNormal() {
+					myVideo.width = "320";
+				}
+
+				function makeSmall() {
+					myVideo.width = "200";
+				}
+			</script>
+
+	</body>
+	<ml>

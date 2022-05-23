@@ -1,0 +1,16 @@
+<article id="myArticle">
+	这是一段用于隐藏或显示的内容
+</article>
+	<button value="hide" onclick="hide()" id="world">hide</button>
+<script>
+	function hide(){
+		var article = document.getElementById("myArticle");
+		if(document.getElementById("world").innerHTML=="hide"){
+			article.setAttribute("hidden",false);
+			document.getElementById("world").innerHTML="show";
+		}else{
+			article.setAttribute("hidden",false);
+			document.getElementById("world").innerHTML="hide";
+		}
+	}
+</script>

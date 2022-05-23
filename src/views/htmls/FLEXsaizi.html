@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Flex骰子</title>
+		<style type="text/css">
+			.box {
+				padding: 12px;
+				width: 150px;
+				height: 150px;
+				border: 1px solid #EFBD76;
+				border-radius: 8px;
+				margin-bottom: 10px;
+				display: flex;
+				box-shadow:-9px 10px 20px #333333; -webkit-box-shadow:-9px 10px 20px #333333; box-shadow:-9px 10px 20px #333333;
+				margin-bottom: 20px;
+				
+			}
+
+			span {
+				width: 40px;
+				height: 40px;
+				background-color: #EFBD76;
+				-moz-box-shadow:-1px 1px 8px #333333; -webkit-box-shadow:-1px 1px 8px #333333; box-shadow:-1px 1px 8px #333333;
+				border-radius: 9px;
+				box-shadow: #EFBD76 2px;
+			}
+
+			.box1 {
+				justify-content: center;
+				align-items: center;
+			}
+
+			.box2 {
+				justify-content: space-between;
+			}
+
+			.box2 .item2 {
+				align-self: flex-end;
+			}
+
+			.box3 {
+				justify-content: space-between;
+			}
+
+			.box3 .item2 {
+				align-self: center;
+			}
+
+			.box3 .item3 {
+				align-self: flex-end;
+			}
+
+			.box4 {
+				flex-direction: column;/* 主轴排列方向 */
+				justify-content: space-between;/* 两端对齐 */
+			}
+
+			.box4 div {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.box5 {
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.box5 div {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.box5 .column {
+				justify-content: center;
+			}
+
+			.box6 {
+				justify-content: space-between;
+			}
+
+			.box6 div {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box box1">
+			<span class="item1"></span>
+		</div>
+		<div class="box box2">
+			<span></span>
+			<span class="item2"></span>
+		</div>
+		<div class="box box3">
+			<!-- 快捷键为 span.item$*3 -->
+			<span class="item1"></span>
+			<span class="item2"></span>
+			<span class="item3"></span>
+		</div>
+		<div class="box box4">
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="box box5">
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="column">
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="box box6">
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</body>
+</html>

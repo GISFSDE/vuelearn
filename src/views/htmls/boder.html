@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+		<style type="text/css">
+			/**css*/
+			.d3 {
+				margin-left: 10px;
+				float: left;
+				width: 0;
+				height: 0;
+				border-width: 100px;
+				border-style: solid;
+				border-color: #0000FF #000000 transparent transparent;
+			}
+
+			.d4 {
+				float: left;
+				margin-left: 10px;
+				width: 100px;
+				height: 100px;
+				margin-left: 50px;
+				border-radius: 50%;
+				border: 22px solid;
+				/* border-image: url("img/2.png"); */
+				border-image: url(img/icon_flower.png) 100 100 round;
+
+			}
+
+
+			.navigater {
+				width: 100%;
+				border: none;
+
+
+			}
+
+			.navigater_tab tr {
+				float: left;
+			}
+
+			.navigater_tab tr td {
+				border-style: none;
+				font-size: 37px;
+
+			}
+
+			.navigater_tab tr td:hover {
+				color: #0000FF;
+				text-decoration: underline;
+			}
+
+			.navigater_tab tr td:active {
+				background-color: #B8B8B8;
+				box-shadow: #D1D1D1 2px solid;
+			}
+
+
+			p {
+				margin-left: 100px;
+			}
+
+			#content {
+				border: solid #000000 2px;
+				height: 400px;
+				width: 596px;
+			}
+
+			#content>div {
+				font-size: 300px;
+				position: absolute;
+			}
+
+			/**html*/
+		</style>
+		<script type="text/javascript">
+			$(function() {
+
+				$("#w").click(
+					function() {
+						$('#content').html('<div class="w">网页</div>');
+					});
+				$("#s").click(
+					function() {
+						$('#content').html('<div class="s">设计</div>');
+					});
+				$("#r").click(
+					function() {
+						$('#content').html('<div class="r">软件</div>');
+					});
+				$("#l").click(
+					function() {
+						$('#content').html('<div class="l">列标</div>');
+					});
+				$("#c").click(
+					function() {
+						$('#content').html('<div class="c">查看</div>');
+					});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="d3"></div>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<div class="d5">
+			<img class="d4" src="img/newp4.jpg" /><br /><br /><br /><br /><br /><br /><br /><br />
+			<p>大哥</p>
+			<img class="d4" src="img/newp3.jpg" /><br /><br /><br /><br /><br /><br /><br /><br />
+			<p>二哥</p>
+			<img class="d4" src="img/newp2.jpg" /><br /><br /><br /><br /><br /><br /><br /><br />
+			<p>三哥</p>
+			<img class="d4" src="img/newp1.jpg" /><br /><br /><br /><br /><br /><br /><br /><br />
+			<p>四哥</p>
+		</div>
+		<div class="d5"></div>
+
+		<div class="navigater">
+			<h1>网页设计软件列表（点击查看）</h1>
+			<table class="navigater_tab" width="600px" border="" cellspacing="5" cellpadding="15">
+				<tr>
+					<td id="w">网页</td>
+				</tr>
+				<tr>
+					<td id="s">设计</td>
+				</tr>
+				<tr>
+					<td id="r">软件</td>
+				</tr>
+				<tr>
+					<td id="l">列表</td>
+				</tr>
+				<tr>
+					<td id="c">查看</td>
+				</tr>
+			</table>
+		</div>
+		<div id="content">
+
+		</div>
+		<div style="display: none;">
+			<div class="w">网页</div>
+			<div class="s">设计</div>
+			<div class="r">软件</div>
+			<div class="l">列标</div>
+			<div class="c">查看</div>
+		</div>
+	</body>
+</html>

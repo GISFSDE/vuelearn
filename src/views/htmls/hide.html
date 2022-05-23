@@ -1,0 +1,27 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.hide{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button value="隐藏" onclick="fn()" style="display:block;" id="world">隐藏 </button>
+	<article id="myArticle">
+		这是用于显示/隐藏的内容
+		</article>
+	<script>
+		function fn(){
+			var art=document.getElementById("myArticle");
+			if(document.getElementById("world").innerHTML=="隐藏"){
+				art.className="hide";
+				document.getElementById("world").innerHTML="显示";
+			}else{
+				art.className="";
+				document.getElementById("world").innerHTML="隐藏";
+			}
+		}
+	</script>
+</body>

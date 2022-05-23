@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>用canvas画矩形</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="400"></canvas>
+		<script type="text/javascript">
+			function draw(id) {
+				var canvas = document.getElementById(id);
+				var ctx = canvas.getContext('2d'); //getContext() 方法可返回一个对象
+				ctx.strokeStyle = "burlywood";
+				ctx.lineWidth = 15; //用宽度为 5 像素的线条来绘制矩形：     
+				ctx.strokeRect(50, 50, 180, 120); //绘制矩形（无填充）
+				ctx.fillRect(110, 110, 150, 75);
+				ctx.beginPath(); //圆
+				ctx.arc(70, 18, 15, 0, Math.PI * 2, true);
+				ctx.closePath();
+				ctx.fill();
+			}
+			draw("canvas");
+		</script>
+		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+			Your browser does not support the canvas element.
+		</canvas>
+
+
+		<script type="text/javascript">
+			var c = document.getElementById("myCanvas");
+			var cxt = c.getContext("2d");
+			var grd = cxt.createLinearGradient(0, 0, 175, 50);
+			grd.addColorStop(0, "#FF0000");
+			grd.addColorStop(1, "#00FF00");
+			cxt.fillStyle = grd;
+			cxt.fillRect(0, 0, 175, 50);
+			var img = new Image();
+			img.src = "img/icon_flower.png";
+			cxt.drawImage(img, 110, 110);
+		</script>
+
+	</body>
+</html>

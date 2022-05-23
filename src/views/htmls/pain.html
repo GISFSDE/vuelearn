@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+			input[type="range"] {
+                -webkit-box-shadow: 0 1px 0 0px #424242, 0 1px 0 #060607 inset, 0px 2px 10px 0px black inset, 1px 0px 2px rgba(0, 0, 0, 0.4) inset, 0 0px 1px rgba(0, 0, 0, 0.6) inset;
+                margin-top: 2px;
+                background-color: #272728;
+                border-radius: 15px;
+                width: 400px;
+                -webkit-appearance: none;
+                height:10px;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                cursor: default;
+                top: -5px;
+                height: 30px;
+                width: 20px;
+                transform: translateY(-4px);
+                background: none repeat scroll 0 0 #777;
+                border-radius: 15px;
+                -webkit-box-shadow: 0 -1px 1px black inset;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background:  gainsboro;
+            }
+            #cav{
+                background: white;
+                position: relative;
+            }
+            #sel{
+                display: block;
+                width: 1190px;
+                height: 30px;
+                background: white;
+                padding: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+				box-shadow: #969797 2px;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function(){
+//              获得画板
+                var cav = document.getElementById("cav");
+//              获得绘画环境
+                var cv = cav.getContext('2d');
+//              设置画笔默认颜色及粗细
+                cv.lineWidth=10;
+                //鼠标按下事件
+                cav.onmousedown = function(e){
+                    ev = window.event||e;
+                    var s_l = ev.offsetX||ev.layerX;
+                    var s_t = ev.offsetY||ev.layerY;
+                    //开始绘制路径
+                    cv.beginPath();
+                    //画笔起始位置
+                    cv.moveTo(s_l,s_t);
+//                  鼠标移动事件
+                    cav.onmousemove = function(e){
+                        var over_ev = window.event||e;
+                        var over_l = over_ev.offsetX||over_ev.layerX;
+                        var over_t = over_ev.offsetY||over_ev.layerY;
+                        //结束位置
+                        cv.lineTo(over_l,over_t);
+                        //绘制线条
+                        cv.stroke();
+                    }
+                }
+                //鼠标抬起事件
+                cav.onmouseup = function(){
+                    //取消鼠标移动事件
+                    cav.onmousemove = null;
+                }
+                //颜色改变事件
+                document.getElementById("ys").onchange = function(){
+                    cv.strokeStyle = this.value;
+                }
+                //改变粗细
+                document.getElementById("cx").onchange = function(){
+                    var cx = this.value;
+                    cv.lineWidth = cx;
+                    document.getElementById("cx_txt").innerHTML = cx;
+                }
+                //橡皮擦
+                document.getElementById("xpc").onclick = function(){
+                    cv.strokeStyle = 'white';
+                }
+            }
+			var document.getElementById("btnReback");
+			btnReback.addEventlistener
+        </script>
+    </head>
+    <body>
+        <div id="sel">
+            颜色：<input type="color" name="" id="ys" value="" />
+            粗细：<input type="range" min="1" max="50" value="10" id="cx" />
+            <span id="cx_txt">10</span>
+            <img src="img/1.jpg" id="xpc" width="30px"/>
+			<input id="btnReback" type="button" value="撤回"/>
+        </div>
+        <canvas id="cav" width="1200px" height="800px"></canvas>
+		
+    </body>
+</html>

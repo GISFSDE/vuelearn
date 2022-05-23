@@ -1,0 +1,39 @@
+<body>
+    <canvas id = "palette" width="400px" height="400px">
+        您的浏览器不支持Canvas标签，请升级或更换浏览器
+    </canvas>
+</body>
+</html>
+<script>
+
+    var palette = document.querySelector("#palette").getContext("2d");
+		var linear=palette.createLinearGradient(100,0,200,0);
+		linear.addColorStop(0,"yellow");
+	    linear.addColorStop(1,"red");
+	palette.beginPath();
+	palette.arc(150,150,50,180*Math.PI/180,360*Math.PI/180);
+	palette.closePath();
+	palette.fillStyle=linear;
+	palette.fill();
+	palette.rotate(0.1);
+	palette.scale(1.3,1.3);
+    CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+        this.beginPath();
+        this.moveTo(x+r, y);
+        this.arcTo(x+w, y, x+w, y+h, r);
+        this.arcTo(x+w, y+h, x, y+h, r);
+        this.arcTo(x, y+h, x, y, r);
+        this.arcTo(x, y, x+w, y, r);
+		<!--this.lineTo();直线-->
+		//this.ellipse(x,y,20,30,30,20,90);
+		//var yan=createLinearGradient(200,200,500,500);
+		//this.createRadialGradient();
+		//yan.addColorStop(0,"#000");
+        this.closePath();
+        return this;
+		
+    }
+    palette.lineWidth = 5;
+    palette.strokeStyle = "#520";
+    palette.roundRect(50,50,200,150,30).stroke();
+</script>

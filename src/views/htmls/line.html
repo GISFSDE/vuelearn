@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	
+	<body >
+		<canvas id="Canvas" width="1300px" height="1200px" ></canvas>
+		<script type="text/javascript">
+			onload=function (){
+			var canvas=document.getElementById('Canvas')
+			var context=canvas.getContext('2d')
+			canvas.addEventListener('click',function(e){
+			var x=e.offsetX
+			var y=e.offsetY
+			
+			context.strokeRect(x,y,10,10)
+			
+			
+			
+			context.moveTo(100,200);
+			context.lineTo(300,400);
+			context.lineTo(100,600);
+			context.lineWidth = 8;
+			context.strokeStyle = "red";
+			context.stroke();//绘制
+			
+			context.moveTo(300,200);
+			context.lineTo(500,400);
+			context.lineTo(300,600);
+			context.lineWidth = 8;
+			context.strokeStyle = "green";
+			context.stroke();//绘制
+			
+			context.moveTo(500,200);
+			context.lineTo(700,400);
+			context.lineTo(500,600);
+			context.lineWidth = 8;
+			context.strokeStyle = "blueviolet";
+			context.stroke();//绘制
+			
+			
+			})
+			
+		}	
+		
+		</script>
+		
+	</body>
+<ml>
