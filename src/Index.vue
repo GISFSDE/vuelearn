@@ -3,25 +3,24 @@
     <el-header>GISER HOME</el-header>
     <el-main
       ><el-row :gutter="20">
+        <el-col :span="6"><div class="grid-content bg-purple">ES6</div></el-col>
         <el-col :span="6"
-          ><div class="grid-content bg-purple">LEAFLET</div></el-col
+          ><div class="grid-content bg-purple">HTML5</div></el-col
         >
         <el-col :span="6"
-          ><div class="grid-content bg-purple">MAPBOX</div></el-col
+          ><div class="grid-content bg-purple">JQuery</div></el-col
         >
         <el-col :span="6"
-          ><div class="grid-content bg-purple">CESIUM</div></el-col
+          ><div class="grid-content bg-purple">TOOL</div></el-col
         >
         <el-col :span="6"
-          ><div class="grid-content bg-purple">OTHERS</div></el-col
+          ><div class="grid-content bg-purple">FRAME</div></el-col
         >
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"
-          ><div class="grid-content bg-purple"></div
-        ></el-col> </el-row
-    ></el-main>
+        <el-col :span="6"><div class="grid-content bg-purple">UI</div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple">3D</div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple">GIS</div></el-col>
+      </el-row></el-main
+    >
     <el-footer>Footer</el-footer>
   </el-container>
 </template>
