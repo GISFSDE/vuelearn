@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header>GISER HOME</el-header>
+    <el-header>FG Front End</el-header>
     <el-main
       ><el-row :gutter="20">
         <el-col :span="6"><div class="grid-content bg-purple">ES6</div></el-col>
@@ -21,7 +21,7 @@
         <el-col :span="6"><div class="grid-content bg-purple">GIS</div></el-col>
       </el-row></el-main
     >
-    <el-footer>Footer</el-footer>
+    <el-footer>GISFSDE</el-footer>
   </el-container>
 </template>
 
