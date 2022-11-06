@@ -11,7 +11,8 @@
 <body>
 
 
-    <!-- 表单项，自定义组件 v-model双向绑定-->
+    <!-- 表单项，自定义组件 v-model双向绑定   仅支持表单类容器（有value属性）-->
+    <!--  v-model:value  简写   v-model -->
     <div id="app">
 
         精通的语言：
@@ -21,7 +22,7 @@
         选中了 {{language.join(",")}}
     </div>
 
-    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../vue.js"></script>
 
     <script>
         let vm = new Vue({
