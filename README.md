@@ -2,29 +2,43 @@
 
 > A Vue.js project about front end include UI、VUE、ES6 and so on.
 
-## Build Setup
+# TODO 
 
-``` bash
-# install dependencies
-npm install
+> ## BASE
 
-# serve with hot reload at localhost:8080
-npm run dev
+### [ES6](https://es6.ruanyifeng.com/#README)
 
-# build for production with minification
-npm run build
+### HTML5
 
-# build for production and view the bundle analyzer report
-npm run build --report
+### CSS3
 
-# run unit tests
-npm run unit
+> ## Frame
+>
 
-# run e2e tests
-npm run e2e
+### VUE
 
-# run all tests
-npm test
-```
+### React
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+> ## Tool
+>
+
+### NPM
+
+### MVN
+
+### webpack
+
+> ## UI
+>
+
++ [ ] 交互
++ [ ] WEB/APP/小程序/运营插画設計
++ [ ] 平面设计
++ [ ] 设计规范
++ [ ] 审美
++ [ ] 色彩搭配
++ [ ] 排版
+
+## 其他
+
+### ICON
