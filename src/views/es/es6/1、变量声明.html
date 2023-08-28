@@ -30,16 +30,19 @@
         //         console.log(m)  // 2
         //         console.log(n)  // Identifier 'n' has already been declared
 
-        // var 会变量提升
-        // let 不存在变量提升
+        // var 会变量提升(声明之前使用)
+        // let 不存在变量提升，不影响作用域链
         //         console.log(x);  // undefined
         //         var x = 10;
         //         console.log(y);   //ReferenceError: y is not defined
         //         let y = 20;
 
-        // let
-        // 1. 声明之后不允许改变
+        // const
+        // 1. 声明之后不允许改变，对于数组和对象的元素修改不算对常量修改，不会报错
         // 2. 一但声明必须初始化，否则会报错
+        // 3. 一般大小
+        // 4，块作用域 
+
         const a = 1;
         a = 3; //Uncaught TypeError: Assignment to constant variable.
 
